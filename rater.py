@@ -76,7 +76,7 @@ def calculate_private(make, model, sum_insured, excess, pvt):
     else:
         if category == "High Risk":
             if sum_insured <= 1_000_000:
-                base_premium = sum_insured * 0.07
+                base_premium = max(sum_insured * 0.07, 50_000)
             elif sum_insured <= 1_500_000:
                 base_premium = max(sum_insured * 0.05, 70_000)
             elif sum_insured <= 2_500_000:
@@ -85,7 +85,7 @@ def calculate_private(make, model, sum_insured, excess, pvt):
                 base_premium = max(sum_insured * 0.03, 87_500)
         else:
             if sum_insured <= 1_000_000:
-                base_premium = sum_insured * 0.07
+                base_premium = max(sum_insured * 0.07, 50_000)
             elif sum_insured <= 1_500_000:
                 base_premium = max(sum_insured * 0.0475, 70_000)
             elif sum_insured <= 2_500_000:
