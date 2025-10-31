@@ -33,7 +33,7 @@ else:
     st.warning("⚠️ Company logo not found. Please check the file path.")
 
 st.markdown(
-    "<h1 style='text-align: center; color: #00008B;'>🚗 Motor Quotation</h1>",
+    "<h1 style='text-align: center; color: #002060;'>🚗 Motor Quotation</h1>",
     unsafe_allow_html=True
 )
 
