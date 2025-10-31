@@ -160,7 +160,7 @@ vehicles = []
 
 # --- PRIVATE ---
 with tab_private:
-    num_private = st.number_input("Number of Private Vehicles", min_value=0, max_value=20, value=0)
+    num_private = st.number_input("No of Vehicles", min_value=0, max_value=20, value=0)
     for i in range(num_private):
         st.subheader(f"Private Vehicle {i+1}")
         make = st.text_input("Make", key=f"make_priv_{i}")
@@ -183,7 +183,7 @@ with tab_private:
 
 # --- COMMERCIAL ---
 with tab_commercial:
-    num_com = st.number_input("Number of Commercial Vehicles", min_value=0, max_value=20, value=0)
+    num_com = st.number_input("No of Vehicles.", min_value=0, max_value=20, value=0)
     for i in range(num_com):
         st.subheader(f"Commercial Vehicle {i+1}")
         subclass = st.selectbox("Subclass", ["Own Goods", "General Cartage", "Institutional", "PSV"], key=f"subclass_{i}")
@@ -243,9 +243,11 @@ if vehicles:
     # ---- PDF Generation ----
     if st.button("Generate Quote"):
         pdf_file = f"Quotation_{client_name.replace(' ', '_')}.pdf"
+        custom_A4 = (680, A4[1])
+
         doc = SimpleDocTemplate(
             pdf_file,
-            pagesize=A4,
+            pagesize=custom_A4,
             leftMargin=40,
             rightMargin=40,
             topMargin=40,
