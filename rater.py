@@ -50,6 +50,7 @@ pin = st.sidebar.text_input("PIN")
 email = st.sidebar.text_input("Email")
 phone = st.sidebar.text_input("Phone")
 policy_no = st.sidebar.text_input("Policy No")
+year_of_make = st.sidebar.text_input("Year of Make")
 
 # ------------------------------
 # CALCULATION FUNCTIONS
@@ -281,6 +282,7 @@ if vehicles:
         <b>PIN:</b> {pin}<br/>
         <b>Email:</b> {email}<br/>
         <b>Phone:</b> {phone}<br/>
+        <b>Year of Make:</b> {year_of_make}<br/>
         """
         elements.append(Paragraph(client_info, styles['Normal']))
         elements.append(Spacer(1, 20))
